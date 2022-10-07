@@ -6,11 +6,9 @@
     <title>Unity WebGL Player | 과제1</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=500 height=500 style="width: 500px; height: 500px; background: #231F20"></canvas>
+    <canvas id="unity-canvas" width=500 height=500 style="width: 100%px; max-width: 500px; max-height: 500px; aspect-ratio: 1/1; background: #231F20"></canvas>
     <script src="Build/과제1WebGL.loader.js"></script>
     <script>
-      //if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
@@ -22,18 +20,15 @@
         canvas.style.position = "fixed";
 
         document.body.style.textAlign = "left";
-      //}
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "Build/과제1WebGL.data.unityweb",
         frameworkUrl: "Build/과제1WebGL.framework.js.unityweb",
         codeUrl: "Build/과제1WebGL.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "Gaeun",
+        companyName: "catadioptric",
         productName: "과제1",
         productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
   </body>
